@@ -2,7 +2,7 @@
   "name": "cyphr-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://r3drvm.github.io/demo-website",
+  "homepage": "https://zoomiesdev.github.io/cyphrdemo",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

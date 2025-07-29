@@ -170,11 +170,15 @@ const Discover: React.FC = () => {
         {/* Actions */}
         <div className="flex gap-3">
           <button className="elite-button px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 text-cyphr-gray flex items-center">
-            <img src="/SearchIcon.png" alt="Search" className="w-4 h-4" style={{ marginRight: '8px' }} />
+            <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
             Search
           </button>
           <button className="elite-button px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 text-cyphr-gray flex items-center">
-            <img src="/WatchlistStar.png" alt="Watchlist" className="w-4 h-4" style={{ marginRight: '8px' }} />
+            <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
             Watchlist
           </button>
         </div>
@@ -253,7 +257,9 @@ const Discover: React.FC = () => {
                         View
                       </Link>
                       <button className="cyphr-button px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center">
-                        <img src="/WatchlistStar.png" alt="Watchlist" className="w-4 h-4" />
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
                       </button>
                     </div>
                   </td>

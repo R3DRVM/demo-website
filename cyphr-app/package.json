@@ -2,6 +2,7 @@
   "name": "cyphr-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://R3DRVM.github.io/demo-website",
   "dependencies": {
     "@types/d3": "^7.4.3",
     "@types/node": "^20.19.0",

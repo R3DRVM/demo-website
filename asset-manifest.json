@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9a3ee634.css",
+    "main.js": "/static/js/main.387f1247.js",
+    "static/js/453.49ff179a.chunk.js": "/static/js/453.49ff179a.chunk.js",
+    "static/media/Nulshock.otf": "/static/media/Nulshock.2c4e49f6cf2e117a119d.otf",
+    "index.html": "/index.html",
+    "main.9a3ee634.css.map": "/static/css/main.9a3ee634.css.map",
+    "main.387f1247.js.map": "/static/js/main.387f1247.js.map",
+    "453.49ff179a.chunk.js.map": "/static/js/453.49ff179a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a3ee634.css",
+    "static/js/main.387f1247.js"
+  ]
+}

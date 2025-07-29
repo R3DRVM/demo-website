@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TokenIcon from '../components/TokenIcon';
 
 const Dashboard: React.FC = () => {
   const [selectedToken, setSelectedToken] = useState('SOL');
@@ -179,16 +180,17 @@ const Dashboard: React.FC = () => {
           <div className="space-y-3">
             {portfolioData.tokens.map((token, index) => (
               <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-cyphr-black/30 border border-cyphr-gray/20">
-                <div className="flex items-center gap-2">
-                  <div 
-                    className="w-8 h-8 rounded-lg flex items-center justify-center text-cyphr-black font-bold text-sm shadow-lg"
-                    style={{ backgroundColor: token.color }}
-                  >
-                    {token.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-bold text-cyphr-white text-sm">{token.name}</div>
-                    <div className="text-cyphr-gray text-xs">{token.amount} tokens</div>
+                <div className="flex items-start gap-3">
+                  <TokenIcon 
+                    token={{
+                      name: token.name,
+                      symbol: token.name
+                    }}
+                    size="md"
+                  />
+                  <div className="flex-1">
+                    <div className="font-bold text-cyphr-white text-base mb-1">{token.name}</div>
+                    <div className="text-cyphr-gray text-sm">{token.amount} tokens</div>
                   </div>
                 </div>
                 <div className="text-right">

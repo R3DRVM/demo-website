@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import TokenIcon from '../components/TokenIcon';
+import TokenAddress from '../components/TokenAddress';
 
 const TokenPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -55,12 +57,19 @@ const TokenPage: React.FC = () => {
       {/* Token Header */}
       <div className="mb-8">
         <div className="flex items-center gap-6 mb-6">
-          <div className="w-16 h-16 bg-gradient-to-br from-cyphr-teal to-cyphr-pink rounded-2xl flex items-center justify-center text-cyphr-black font-bold text-2xl shadow-lg">
-            {tokenData.name.charAt(0)}
-          </div>
+          <TokenIcon 
+            token={{
+              name: tokenData.name,
+              symbol: tokenData.symbol
+            }}
+            size="lg"
+          />
           <div>
             <h1 className="text-4xl font-bold text-cyphr-white mb-2 font-nulshock">{tokenData.name}</h1>
-            <p className="text-cyphr-gray font-sf-pro">{tokenData.symbol} • {tokenData.address.slice(0, 8)}...{tokenData.address.slice(-6)}</p>
+            <div className="flex items-center gap-2">
+              <span className="text-cyphr-gray font-sf-pro">{tokenData.symbol} •</span>
+              <TokenAddress address={tokenData.address} className="text-sm" />
+            </div>
           </div>
         </div>
         

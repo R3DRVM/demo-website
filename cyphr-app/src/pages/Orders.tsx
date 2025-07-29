@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TokenIcon from '../components/TokenIcon';
 
 const Orders: React.FC = () => {
   const [activeTab, setActiveTab] = useState('active');
@@ -188,12 +189,16 @@ const Orders: React.FC = () => {
               {activeOrders.map((order) => (
                 <div key={order.id} className="p-6 rounded-xl bg-cyphr-black/50 border border-cyphr-gray/30">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-cyphr-teal to-cyphr-pink rounded-xl flex items-center justify-center text-cyphr-black font-bold text-lg shadow-lg">
-                        {order.token.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="font-bold text-cyphr-white text-lg">{order.token}</div>
+                    <div className="flex items-start gap-4">
+                      <TokenIcon 
+                        token={{
+                          name: order.token,
+                          symbol: order.token
+                        }}
+                        size="md"
+                      />
+                      <div className="flex-1">
+                        <div className="font-bold text-cyphr-white text-lg mb-1">{order.token}</div>
                         <div className="text-cyphr-gray text-sm">Order #{order.id}</div>
                       </div>
                     </div>

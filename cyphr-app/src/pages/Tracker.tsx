@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import TokenIcon from '../components/TokenIcon';
 
 interface Bubble {
   id: number;
@@ -572,12 +573,19 @@ const Tracker: React.FC = () => {
                 <button
                   key={token}
                   onClick={() => handleTokenSelect(token)}
-                  className={`px-3 py-1 rounded-lg text-xs font-medium transition-all duration-300 ${
+                  className={`px-3 py-2 rounded-lg text-xs font-medium transition-all duration-300 flex items-center gap-2 ${
                     selectedToken === token
                       ? 'bg-cyphr-teal text-cyphr-black'
                       : 'bg-cyphr-gray/20 text-cyphr-gray hover:text-cyphr-white hover:bg-cyphr-gray/30'
                   }`}
                 >
+                  <TokenIcon 
+                    token={{
+                      name: token,
+                      symbol: token
+                    }}
+                    size="md"
+                  />
                   {token}
                 </button>
               ))}
@@ -596,8 +604,19 @@ const Tracker: React.FC = () => {
           >
             {/* Token Info Overlay */}
             <div className="absolute top-4 left-4 z-20 bg-cyphr-black/80 backdrop-blur-md rounded-lg p-3 border border-cyphr-gray/30">
-              <div className="text-cyphr-white text-sm font-semibold">{selectedToken}</div>
-              <div className="text-cyphr-gray text-xs">{tokenDatabase[selectedToken as keyof typeof tokenDatabase]?.name}</div>
+              <div className="flex items-center gap-2">
+                <TokenIcon 
+                  token={{
+                    name: selectedToken,
+                    symbol: selectedToken
+                  }}
+                  size="md"
+                />
+                <div>
+                  <div className="text-cyphr-white text-sm font-semibold">{selectedToken}</div>
+                  <div className="text-cyphr-gray text-xs">{tokenDatabase[selectedToken as keyof typeof tokenDatabase]?.name}</div>
+                </div>
+              </div>
             </div>
 
             {/* Time Range Buttons */}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import TokenIcon from '../components/TokenIcon';
+import TokenAddress from '../components/TokenAddress';
 
 const Discover: React.FC = () => {
   const [activeTab, setActiveTab] = useState('trending');
@@ -10,8 +12,10 @@ const Discover: React.FC = () => {
   const mockTokens = [
     {
       id: 1,
-      name: 'GNOME',
-      fullName: 'Gnome Child',
+      name: 'CO',
+      symbol: 'CO',
+      fullName: 'AWZy',
+      address: '0xAWZy123456789abcdef123456789abcdef123456',
       time: '8s',
       marketCap: '$64.3K',
       marketCapChange: '-2.45%',
@@ -26,12 +30,15 @@ const Discover: React.FC = () => {
       paid: false,
       paidAmount: '0.14%',
       holders: '389',
-      supply: '214'
+      supply: '214',
+      badgeType: 'swap'
     },
     {
       id: 2,
-      name: 'johnbubu',
-      fullName: 'labubu joh...',
+      name: 'RIB',
+      symbol: 'RIB',
+      fullName: '3RxT',
+      address: '0x3RxT456789abcdef123456789abcdef12345678',
       time: '19h',
       marketCap: '$1.29M',
       marketCapChange: '+2.062%',
@@ -46,12 +53,15 @@ const Discover: React.FC = () => {
       paid: true,
       paidAmount: '0%',
       holders: '3925',
-      supply: '833'
+      supply: '833',
+      badgeType: 'swap'
     },
     {
       id: 3,
-      name: 'Gonk',
-      fullName: 'Gonk',
+      name: 'PER',
+      symbol: 'PER',
+      fullName: '5mEC',
+      address: '0x5mEC789abcdef123456789abcdef123456789ab',
       time: '5m',
       marketCap: '$57.5K',
       marketCapChange: '-24.2%',
@@ -66,12 +76,15 @@ const Discover: React.FC = () => {
       paid: false,
       paidAmount: '0%',
       holders: '442',
-      supply: '221'
+      supply: '221',
+      badgeType: 'trending'
     },
     {
       id: 4,
-      name: 'O',
-      fullName: 'Odotexchange',
+      name: 'PAC',
+      symbol: 'PAC',
+      fullName: '24xh',
+      address: '0x24xh456789abcdef123456789abcdef12345678',
       time: '17s',
       marketCap: '$12.9K',
       marketCapChange: '+7.893%',
@@ -86,12 +99,15 @@ const Discover: React.FC = () => {
       paid: false,
       paidAmount: '23.14%',
       holders: '23',
-      supply: '14'
+      supply: '14',
+      badgeType: 'trending'
     },
     {
       id: 5,
-      name: 'dogshit',
-      fullName: 'dogshit',
+      name: 'MU',
+      symbol: 'MU',
+      fullName: '5bqe',
+      address: '0x5bqe456789abcdef123456789abcdef12345678',
       time: '11m',
       marketCap: '$34.1K',
       marketCapChange: '+8.368%',
@@ -106,7 +122,77 @@ const Discover: React.FC = () => {
       paid: false,
       paidAmount: '25.74%',
       holders: '89',
-      supply: '45'
+      supply: '45',
+      badgeType: 'swap'
+    },
+    {
+      id: 6,
+      name: 'PR',
+      symbol: 'PR',
+      fullName: '22nF',
+      address: '0x22nF456789abcdef123456789abcdef12345678',
+      time: '3h',
+      marketCap: '$1.8M',
+      marketCapChange: '-5.2%',
+      liquidity: '$95K',
+      volume: '$67K',
+      txns: '178',
+      buyTxns: '92',
+      sellTxns: '86',
+      buyTax: '15.8%',
+      sellTax: '9.1%',
+      totalTax: '4.12%',
+      paid: false,
+      paidAmount: '0.25%',
+      holders: '3456',
+      supply: '987',
+      badgeType: 'trending'
+    },
+    {
+      id: 7,
+      name: 'DX',
+      symbol: 'DX',
+      fullName: 'EZut',
+      address: '0xEZut456789abcdef123456789abcdef12345678',
+      time: '45m',
+      marketCap: '$890K',
+      marketCapChange: '+12.3%',
+      liquidity: '$67K',
+      volume: '$45K',
+      txns: '123',
+      buyTxns: '78',
+      sellTxns: '45',
+      buyTax: '8.9%',
+      sellTax: '5.4%',
+      totalTax: '2.78%',
+      paid: true,
+      paidAmount: '0%',
+      holders: '2345',
+      supply: '567',
+      badgeType: 'trending'
+    },
+    {
+      id: 8,
+      name: 'NY',
+      symbol: 'NY',
+      fullName: 'FUrE',
+      address: '0xFUrE456789abcdef123456789abcdef12345678',
+      time: '1h',
+      marketCap: '$1.2M',
+      marketCapChange: '+7.8%',
+      liquidity: '$89K',
+      volume: '$67K',
+      txns: '156',
+      buyTxns: '89',
+      sellTxns: '67',
+      buyTax: '11.2%',
+      sellTax: '7.1%',
+      totalTax: '3.45%',
+      paid: false,
+      paidAmount: '0.18%',
+      holders: '3456',
+      supply: '789',
+      badgeType: 'swap'
     }
   ];
 
@@ -170,11 +256,11 @@ const Discover: React.FC = () => {
         {/* Actions */}
         <div className="flex gap-3">
           <button className="elite-button px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 text-cyphr-gray flex items-center">
-            <img src={process.env.PUBLIC_URL + "/SearchIcon.png"} alt="Search" className="w-4 h-4" style={{ marginRight: '8px' }} />
+            <img src="/SearchIcon.png" alt="Search" className="w-4 h-4" style={{ marginRight: '8px' }} />
             Search
           </button>
           <button className="elite-button px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 text-cyphr-gray flex items-center">
-            <img src={process.env.PUBLIC_URL + "/WatchlistStar.png"} alt="Watchlist" className="w-4 h-4" style={{ marginRight: '8px' }} />
+            <img src="/WatchlistStar.png" alt="Watchlist" className="w-4 h-4" style={{ marginRight: '8px' }} />
             Watchlist
           </button>
         </div>
@@ -200,13 +286,20 @@ const Discover: React.FC = () => {
               {mockTokens.map((token) => (
                 <tr key={token.id} className="border-b border-cyphr-gray/10 hover:bg-cyphr-gray/5 transition-colors duration-300">
                   <td className="px-6 py-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-cyphr-teal to-cyphr-pink rounded-full flex items-center justify-center text-cyphr-black font-bold text-sm">
-                        {token.name.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="text-cyphr-white font-semibold text-sm">{token.name}</div>
-                        <div className="text-cyphr-gray text-xs">{token.fullName}</div>
+                    <div className="flex items-start gap-4">
+                      <TokenIcon 
+                        token={{
+                          name: token.name,
+                          symbol: token.symbol || token.name
+                        }}
+                        size="md"
+                      />
+                      <div className="flex-1">
+                        <div className="text-cyphr-white font-semibold text-base mb-1">${token.name}</div>
+                        <div className="text-cyphr-gray text-sm mb-1">{token.fullName}</div>
+                        <div className="mb-1">
+                          <TokenAddress address={token.address} className="text-xs" />
+                        </div>
                         <div className="text-cyphr-gray text-xs">{token.time} ago</div>
                       </div>
                     </div>
@@ -253,7 +346,7 @@ const Discover: React.FC = () => {
                         View
                       </Link>
                       <button className="cyphr-button px-3 py-1 text-xs font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center">
-                        <img src={process.env.PUBLIC_URL + "/WatchlistStar.png"} alt="Watchlist" className="w-4 h-4" />
+                        <img src="/WatchlistStar.png" alt="Watchlist" className="w-4 h-4" />
                       </button>
                     </div>
                   </td>

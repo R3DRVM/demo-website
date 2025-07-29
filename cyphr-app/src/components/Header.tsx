@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           <Link to="/" className="logo-link">
             <div className="logo-container">
               <img
-                src="/White%203d%20Logo.png"
+                src={process.env.PUBLIC_URL + "/White%203d%20Logo.png"}
                 alt="Cyphr Logo"
                 className="logo-image"
               />
